@@ -15,10 +15,15 @@ const ProductController = {
   return res.status(200).json(productId);
 },
 
- addProducts: async (req, res) => {
-  const { name } = req.body;
-  const newProduct = await ProductService.addProducts(name);
-  res.status(201).json(newProduct);
+  addProducts: async (req, res) => {
+    const { name } = req.body;
+    const id = await ProductService.addProducts({ name });
+    const object = {
+      id: Number(id),
+      name,
+    };
+
+    return res.status(201).json(object);
 },
 
 };

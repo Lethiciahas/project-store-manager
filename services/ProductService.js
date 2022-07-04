@@ -14,9 +14,10 @@ const ProductServices = {
   return productId;
   },
   
-  addProducts: async (name) => {
-    const create = await ProductModels.addProducts(name);
-    return create;
+  addProducts: async (newProduct) => {
+    const { name } = newProduct;
+     const id = await ProductModels.addProducts(name);
+    return id;
   },
 
 };

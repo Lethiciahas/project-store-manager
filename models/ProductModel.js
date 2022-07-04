@@ -15,13 +15,9 @@ const ProductModels = {
   },
 
   addProducts: async (name) => {
-    const query = 'INSERT INTO StoreManager.products (name) VALUE (?);';
-    const [data] = await connection.execute(query, [name]);
-    const newProduct = {
-      id: data.insertId,
-      name,
-    };
-    return newProduct;
+    const query = 'INSERT INTO StoreManager.products (name) VALUES (?);';
+    const [{ insertId }] = await connection.execute(query, [name]);
+    return insertId;
   },
   
 };
