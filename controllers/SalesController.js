@@ -15,6 +15,13 @@ const SalesController = {
   return res.status(200).json(saleId);
 },
 
+  addSales: async (req, res) => {
+    const { productId, quantity } = req.body;
+  
+    const data = await SalesService.addSales({ productId, quantity });
+    return res.status(201).json(data);
+  },
+
 };
 
 module.exports = SalesController;

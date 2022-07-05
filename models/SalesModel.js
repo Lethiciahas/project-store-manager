@@ -14,6 +14,12 @@ const SalesModel = {
     return productId;
   },
 
+  addSales: async (data) => {
+    const query = 'INSERT INTO StoreManager.sales (date) VALUES (?);';
+    const insertData = await connection.execute(query, [data]);
+    return insertData;
+  },
+
 };
 
 module.exports = SalesModel;

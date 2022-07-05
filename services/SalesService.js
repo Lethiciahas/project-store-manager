@@ -13,6 +13,13 @@ const SalesService = {
     }
     return salesId;
   },
+
+  addSales: async (newSale) => {
+    const { productId, quantity } = newSale;
+    const data = await SalesModel.addSales(productId, quantity);
+    return data;
+  },
+  
 };
 
 module.exports = SalesService;

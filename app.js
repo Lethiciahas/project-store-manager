@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const ProductController = require('./controllers/ProductController');
-// const SaleController = require('./controllers/SalesController');
-
-// const validatorName = require('./middlewares/validatorName');
+const SaleController = require('./controllers/SalesController');
 
 const app = express();
 
@@ -20,7 +18,8 @@ app.get('/products', ProductController.getProducts);
 app.get('/products/:id', ProductController.getProductsById);
 app.post('/products', ProductController.addProducts);
 
-// app.get('/sales', SaleController.getSales);
+app.get('/sales', SaleController.getSales);
+app.post('/sales', SaleController.addSales);
 // app.get('/sales/:id', SaleController.getSalesById);
 
 // não remova essa exportação, é para o avaliador funcionar
