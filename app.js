@@ -19,7 +19,6 @@ app.get('/products/:id', ProductController.getProductsById);
 app.post('/products', ProductController.addProducts);
 
 app.get('/sales', SaleController.getSales);
-app.post('/sales', SaleController.addSales);
 // app.get('/sales/:id', SaleController.getSalesById);
 
 // não remova essa exportação, é para o avaliador funcionar
