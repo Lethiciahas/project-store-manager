@@ -7,7 +7,8 @@ const SalesService = {
   },
 
   getSaleById: async (id) => {
-  const saleId = await SalesModel.getSaleById(id);
+    const saleId = await SalesModel.getSaleById(id);
+    if (!saleId) return false;
   return saleId;
   },
 

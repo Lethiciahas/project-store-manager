@@ -20,6 +20,12 @@ const ProductServices = {
     return id;
   },
 
+  updateProducts: async (name, id) => {
+    const data = await ProductModels.updateProducts(id, name);
+    if (!data) return false;
+    return data;
+  },
+
 };
 
 module.exports = ProductServices;

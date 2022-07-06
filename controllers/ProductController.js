@@ -29,8 +29,11 @@ const ProductController = {
       name,
     };
     return res.status(201).json(object);
-},
+  },
 
+  updateProducts: async (_req, _res) => {
+  },
+  
 };
 
 module.exports = ProductController;
