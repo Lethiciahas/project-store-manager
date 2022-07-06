@@ -8,9 +8,6 @@ const SalesService = {
 
   getSaleById: async (id) => {
   const saleId = await SalesModel.getSaleById(id);
-  if (!saleId) {
-    return null;
-  }
   return saleId;
   },
 

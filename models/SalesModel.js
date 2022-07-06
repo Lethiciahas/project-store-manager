@@ -21,6 +21,7 @@ const SalesModel = {
     const [result] = await connection.execute(query, [id]);
     return result;
   },
+
 };
 
 module.exports = SalesModel;
