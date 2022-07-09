@@ -20,6 +20,7 @@ const SalesModel = {
     WHERE p.sale_id=?
     ORDER BY p.sale_id ASC, p.product_id ASC;`;
     const [result] = await connection.execute(query, [id]);
+    if (result.length === '') return null;
     return result;
   },
 

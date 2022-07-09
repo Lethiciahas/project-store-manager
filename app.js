@@ -15,11 +15,15 @@ app.get('/', (_request, response) => {
 });
 
 app.get('/products', ProductController.getProducts);
+
 app.get('/products/:id', ProductController.getProductsById);
+
 app.post('/products', ProductController.addProducts);
+
 app.put('/products/:id', ProductController.updateProducts);
 
 app.get('/sales', SaleController.getSales);
+
 app.get('/sales/:id', SaleController.getSaleById);
 
 // não remova essa exportação, é para o avaliador funcionar
