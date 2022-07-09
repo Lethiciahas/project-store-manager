@@ -36,6 +36,7 @@ describe('Teste a função getProductById da camada models', () => {
       expect(item).to.include.all.keys('id', 'name');
   });
   
+
 });
 describe('Teste a função getProducts da camada models', () => {
   const object = [
@@ -61,4 +62,19 @@ describe('Teste a função getProducts da camada models', () => {
 
     expect(response).to.be.an('object');
   });
+});
+
+describe('Teste a função addProducts da camada models', () => {
+  const object = [
+    {
+    id: 1,
+    name: 'Martelo de Thor',
+    }
+  ];
+  it('testa se os produtos são adicionados ao Banco de Dados', async () => {
+    sinon.stub(ProductModel, 'addProducts').resolves(1);
+    const response = await ProductModel.addProducts(object);
+    expect(response).to.be.eq(1);
+  });
+
 });
