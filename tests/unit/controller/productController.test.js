@@ -19,7 +19,7 @@ describe('teste a função getProducts da camada controllers', () => {
 });
 
 describe('teste a função getProductsById da camada controllers', () => {
-  it('testa se retorna produtos na função getProductsById', () => {
+  it('testa se retorna produtos na função getProductsById', async () => {
     const res = {};
     const req = {};
     before(() => {
