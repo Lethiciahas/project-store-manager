@@ -33,19 +33,18 @@ describe('teste a função getProductsById da camada controllers', () => {
   });
 });
 
-describe('testa a função addProducts na camada controllers', async () => {
-  it('Testa se é enviado um body válido', () => {
+describe('testa a função addProducts na camada controllers',() => {
+  it('Testa se é enviado um body válido', async () => {
     const req = {};
     const res = {};
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub()
-    req.body = { name: 'Martelo de Thor' };
+    req.body = { id: 1,  name: 'Martelo de Thor'};
     sinon.stub(ProductServices, 'addProducts').resolves(1)
     await ProductController.addProducts(req, res);
-    expect(res.status.calledWith(201)).to.be.equal(true);
-    expect({ name: 'Martelo de Thor' }).to.be.equal(true);
-  });
- 
 
+    expect(res.status.calledWith(201)).to.be.equal(true);
+    expect(res.json.calledWith({ id: 1,  name: 'Martelo de Thor' })).to.be.equal(true);
+  });
 });
