@@ -36,7 +36,20 @@ const ProductController = {
     }
   },
 
-  updateProducts: async (_req, _res) => {
+  updateProducts: async (req, res) => {
+      const { id } = req.params;
+      const { name } = req.body;
+      if (!name) return res.status(400).json({ message: '"name" is required' });
+      if (name.length < 5) {
+        return res.status(422)
+          .json({ message: '"name" length must be at least 5 characters long' });
+      }
+    const data = await ProductServices.getProductsById(id);
+    if (!data) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    await ProductServices.updateProducts({ id, name });
+    return res.status(200).json({ id, name });
   },
   
   deleteProducts: async (req, res) => {

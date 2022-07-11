@@ -20,9 +20,8 @@ const ProductServices = {
     return id;
   },
 
-  updateProducts: async (name, id) => {
-    const data = await ProductModels.updateProducts(id, name);
-    if (!data) return false;
+  updateProducts: async ({ id, name }) => {
+    const data = await ProductModels.updateProducts({ id, name });
     return data;
   },
 
