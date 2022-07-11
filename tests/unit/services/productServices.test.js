@@ -55,6 +55,7 @@ describe('Teste a função getProducts da camada service', () => {
     const response = await ProductServices.getProducts(1);
 
     expect(response).to.be.an('object');
-  });
+   });
+  
 });
 

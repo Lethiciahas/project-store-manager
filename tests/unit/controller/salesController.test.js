@@ -30,4 +30,4 @@ describe('teste a função getSalesById da camada controllers', () => {
       expect(res.status.calledWith(200)).to.be.equal(true);
     });
   })
-})
+});

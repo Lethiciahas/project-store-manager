@@ -47,4 +47,5 @@ describe('testa a função addProducts na camada controllers',() => {
     expect(res.status.calledWith(201)).to.be.equal(true);
     expect(res.json.calledWith({ id: 1,  name: 'Martelo de Thor' })).to.be.equal(true);
   });
+  
 });
